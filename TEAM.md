@@ -12,6 +12,12 @@
 
 Nhóm có thể gộp hoặc chia vai trò theo số lượng thành viên thực tế. Mỗi người dùng tài khoản GitHub riêng, tự tạo nhánh/commit hoặc pull request cho phần mình làm. Không gán commit của một người cho thành viên khác.
 
+## Trạng thái quyền truy cập GitHub
+
+- Nguyễn Văn Tuấn (`TUANNV0301`) là chủ repository.
+- Lời mời cộng tác cho Lê Huy Cường (`CuongLH02`) đã gửi; đang chờ chấp nhận.
+- Username `daophuongvinh4` hiện không tìm thấy trên GitHub. Chưa gửi lời mời cho tài khoản gần giống; cần xác nhận username chính xác của Đào Phương Vinh.
+
 ## Nhật ký bằng chứng GitHub
 
 Điền sau khi có hoạt động thật trên repository. Dùng liên kết commit hoặc pull request; có thể bổ sung ảnh chụp màn hình trang Contributors nếu bài nộp yêu cầu.

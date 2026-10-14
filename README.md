@@ -1,6 +1,6 @@
 # ADY201m — Phân tích giá niêm yết xe đã qua sử dụng tại UAE
 
-> **Trạng thái nhóm:** Repository riêng tư đã được tạo trên tài khoản của Nguyễn Văn Tuấn và project baseline đã được push. Các thành viên còn lại cần đóng góp bằng commit hoặc pull request cá nhân.
+> **Trạng thái nhóm:** Repository riêng tư đã được tạo trên tài khoản của Nguyễn Văn Tuấn và project baseline đã được push. Lời mời của Cường đang chờ chấp nhận; cần xác nhận username GitHub chính xác của Vinh. Các thành viên cần đóng góp bằng commit hoặc pull request cá nhân.
 >
 > **GitHub:** [TUANNV0301/ady201m-uae-used-cars-analysis](https://github.com/TUANNV0301/ady201m-uae-used-cars-analysis) (Private).
 
