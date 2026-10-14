@@ -1,8 +1,9 @@
 # ADY201m — Phân tích giá niêm yết xe đã qua sử dụng tại UAE
 
-> **Trạng thái nhóm:** Repository riêng tư đã được tạo trên tài khoản của Nguyễn Văn Tuấn và project baseline đã được push. Lời mời cộng tác cho `CuongLH02` và `daophuongvinh4-design` đã gửi; cả hai đang chờ chấp nhận. Các thành viên cần đóng góp bằng commit hoặc pull request cá nhân.
+> **GitHub repository (Public):** [Mở project trên GitHub](https://github.com/TUANNV0301/ady201m-uae-used-cars-analysis) — `TUANNV0301/ady201m-uae-used-cars-analysis`.
+> Lời mời cộng tác cho `CuongLH02` và `daophuongvinh4-design` đã gửi, hiện đang chờ chấp nhận. Các thành viên ghi nhận đóng góp bằng commit hoặc pull request từ tài khoản cá nhân.
 >
-> **GitHub:** [TUANNV0301/ady201m-uae-used-cars-analysis](https://github.com/TUANNV0301/ady201m-uae-used-cars-analysis) (Private).
+
 
 ## Tổng quan dự án
 
@@ -113,4 +114,5 @@ Mở notebook theo thứ tự trong `notebooks/eda/`, sau đó `notebooks/modeli
 ## Giới hạn
 
 Giá là giá rao chứ không phải giao dịch; dữ liệu tập trung nhiều ở Dubai; phân phối giá có ngoại lệ lớn; baseline chỉ dùng năm và số km, không có hãng/mẫu và nhiều đặc trưng khác. Diễn giải kết quả trong phạm vi bộ dữ liệu này.
+
 
