@@ -18,6 +18,6 @@ Nhóm có thể gộp hoặc chia vai trò theo số lượng thành viên thự
 
 | Thành viên / username | Liên kết commit hoặc PR | Phần việc được đóng góp | Ngày |
 | --- | --- | --- | --- |
-| Nguyễn Văn Tuấn (`TUANNV0301`) | Chờ commit/PR | Chưa ghi nhận hoạt động GitHub | — |
+| Nguyễn Văn Tuấn (`TUANNV0301`) | [e849c80 — khởi tạo repository](https://github.com/TUANNV0301/ady201m-uae-used-cars-analysis/commit/e849c8062a4a67d535f60a0ccf1314df28e0760f) | Tạo repo và publish baseline; chưa ghi nhận phần phân tích theo vai trò | 2026-10-14 |
 | Lê Huy Cường (`CuongLH02`) | Chờ commit/PR | Chưa ghi nhận hoạt động GitHub | — |
 | Đào Phương Vinh (`daophuongvinh4`) | Chờ commit/PR | Chưa ghi nhận hoạt động GitHub | — |

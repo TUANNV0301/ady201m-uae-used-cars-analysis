@@ -1,8 +1,8 @@
 # ADY201m — Phân tích giá niêm yết xe đã qua sử dụng tại UAE
 
-> **Trạng thái nhóm:** Đã có roster và phân công dự kiến. Repo online và bằng chứng đóng góp GitHub đang chờ kết nối đúng tài khoản.
+> **Trạng thái nhóm:** Repository riêng tư đã được tạo trên tài khoản của Nguyễn Văn Tuấn và project baseline đã được push. Các thành viên còn lại cần đóng góp bằng commit hoặc pull request cá nhân.
 >
-> **Tên repository gợi ý:** `ady201m-uae-used-cars-analysis` (nên tạo Private để nhóm kiểm soát quyền truy cập).
+> **GitHub:** [TUANNV0301/ady201m-uae-used-cars-analysis](https://github.com/TUANNV0301/ady201m-uae-used-cars-analysis) (Private).
 
 ## Tổng quan dự án
 
@@ -88,7 +88,7 @@ Chỉ ghi nhận đóng góp sau khi có commit hoặc pull request thực tế 
 
 | Thành viên | Bằng chứng GitHub | Phần việc đã hoàn tất |
 | --- | --- | --- |
-| Nguyễn Văn Tuấn (`TUANNV0301`) | Chờ commit/PR | Chưa ghi nhận hoạt động GitHub |
+| Nguyễn Văn Tuấn (`TUANNV0301`) | [e849c80 — khởi tạo repository](https://github.com/TUANNV0301/ady201m-uae-used-cars-analysis/commit/e849c8062a4a67d535f60a0ccf1314df28e0760f) | Tạo repo và đưa baseline dự án lên GitHub; phần việc phân tích tiếp theo đang chờ thực hiện |
 | Lê Huy Cường (`CuongLH02`) | Chờ commit/PR | Chưa ghi nhận hoạt động GitHub |
 | Đào Phương Vinh (`daophuongvinh4`) | Chờ commit/PR | Chưa ghi nhận hoạt động GitHub |
 
