@@ -1,6 +1,6 @@
 # ADY201m — Phân tích giá niêm yết xe đã qua sử dụng tại UAE
 
-> **Trạng thái nhóm:** Repository riêng tư đã được tạo trên tài khoản của Nguyễn Văn Tuấn và project baseline đã được push. Lời mời của Cường đang chờ chấp nhận; cần xác nhận username GitHub chính xác của Vinh. Các thành viên cần đóng góp bằng commit hoặc pull request cá nhân.
+> **Trạng thái nhóm:** Repository riêng tư đã được tạo trên tài khoản của Nguyễn Văn Tuấn và project baseline đã được push. Lời mời cộng tác cho `CuongLH02` và `daophuongvinh4-design` đã gửi; cả hai đang chờ chấp nhận. Các thành viên cần đóng góp bằng commit hoặc pull request cá nhân.
 >
 > **GitHub:** [TUANNV0301/ady201m-uae-used-cars-analysis](https://github.com/TUANNV0301/ady201m-uae-used-cars-analysis) (Private).
 
@@ -78,7 +78,7 @@ Roster và phân công dự kiến nằm trong [`TEAM.md`](TEAM.md). Mỗi thàn
 | --- | --- | --- |
 | Dữ liệu và làm sạch | Nguồn, chất lượng, pipeline và data dictionary | Nguyễn Văn Tuấn — `TUANNV0301` (HE204537) |
 | SQL và cơ sở dữ liệu | SQLite, schema, truy vấn và kiểm tra kết quả | Lê Huy Cường — `CuongLH02` (HE204406) |
-| EDA, mô hình và báo cáo | Notebook, biểu đồ, baseline, báo cáo và slide | Đào Phương Vinh — `daophuongvinh4` (HE204851) |
+| EDA, mô hình và báo cáo | Notebook, biểu đồ, baseline, báo cáo và slide | Đào Phương Vinh — `daophuongvinh4-design` (HE204851) |
 
 Một thành viên có thể đảm nhận nhiều vai trò nếu quy mô nhóm nhỏ.
 
@@ -90,7 +90,7 @@ Chỉ ghi nhận đóng góp sau khi có commit hoặc pull request thực tế 
 | --- | --- | --- |
 | Nguyễn Văn Tuấn (`TUANNV0301`) | [e849c80 — khởi tạo repository](https://github.com/TUANNV0301/ady201m-uae-used-cars-analysis/commit/e849c8062a4a67d535f60a0ccf1314df28e0760f) | Tạo repo và đưa baseline dự án lên GitHub; phần việc phân tích tiếp theo đang chờ thực hiện |
 | Lê Huy Cường (`CuongLH02`) | Chờ commit/PR | Chưa ghi nhận hoạt động GitHub |
-| Đào Phương Vinh (`daophuongvinh4`) | Chờ commit/PR | Chưa ghi nhận hoạt động GitHub |
+| Đào Phương Vinh (`daophuongvinh4-design`) | Chờ commit/PR | Chưa ghi nhận hoạt động GitHub |
 
 ## Cài đặt và chạy lại
 
@@ -113,3 +113,4 @@ Mở notebook theo thứ tự trong `notebooks/eda/`, sau đó `notebooks/modeli
 ## Giới hạn
 
 Giá là giá rao chứ không phải giao dịch; dữ liệu tập trung nhiều ở Dubai; phân phối giá có ngoại lệ lớn; baseline chỉ dùng năm và số km, không có hãng/mẫu và nhiều đặc trưng khác. Diễn giải kết quả trong phạm vi bộ dữ liệu này.
+

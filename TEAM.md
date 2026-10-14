@@ -8,7 +8,7 @@
 | --- | --- | --- | --- | --- |
 | Nguyễn Văn Tuấn | HE204537 | `TUANNV0301` | Dữ liệu và làm sạch | Theo dõi nguồn dữ liệu, kiểm tra chất lượng, pipeline làm sạch và data dictionary |
 | Lê Huy Cường | HE204406 | `CuongLH02` | SQL và cơ sở dữ liệu | Schema SQLite, truy vấn SQL, kiểm tra tính nhất quán giữa SQL và kết quả phân tích |
-| Đào Phương Vinh | HE204851 | `daophuongvinh4` | EDA, mô hình và báo cáo | Notebook/biểu đồ, diễn giải baseline, tổng hợp báo cáo và slide |
+| Đào Phương Vinh | HE204851 | `daophuongvinh4-design` | EDA, mô hình và báo cáo | Notebook/biểu đồ, diễn giải baseline, tổng hợp báo cáo và slide |
 
 Nhóm có thể gộp hoặc chia vai trò theo số lượng thành viên thực tế. Mỗi người dùng tài khoản GitHub riêng, tự tạo nhánh/commit hoặc pull request cho phần mình làm. Không gán commit của một người cho thành viên khác.
 
@@ -16,7 +16,7 @@ Nhóm có thể gộp hoặc chia vai trò theo số lượng thành viên thự
 
 - Nguyễn Văn Tuấn (`TUANNV0301`) là chủ repository.
 - Lời mời cộng tác cho Lê Huy Cường (`CuongLH02`) đã gửi; đang chờ chấp nhận.
-- Username `daophuongvinh4` hiện không tìm thấy trên GitHub. Chưa gửi lời mời cho tài khoản gần giống; cần xác nhận username chính xác của Đào Phương Vinh.
+- Username `daophuongvinh4-design` hiện không tìm thấy trên GitHub. Chưa gửi lời mời cho tài khoản gần giống; cần xác nhận username chính xác của Đào Phương Vinh.
 
 ## Nhật ký bằng chứng GitHub
 
@@ -26,4 +26,5 @@ Nhóm có thể gộp hoặc chia vai trò theo số lượng thành viên thự
 | --- | --- | --- | --- |
 | Nguyễn Văn Tuấn (`TUANNV0301`) | [e849c80 — khởi tạo repository](https://github.com/TUANNV0301/ady201m-uae-used-cars-analysis/commit/e849c8062a4a67d535f60a0ccf1314df28e0760f) | Tạo repo và publish baseline; chưa ghi nhận phần phân tích theo vai trò | 2026-10-14 |
 | Lê Huy Cường (`CuongLH02`) | Chờ commit/PR | Chưa ghi nhận hoạt động GitHub | — |
-| Đào Phương Vinh (`daophuongvinh4`) | Chờ commit/PR | Chưa ghi nhận hoạt động GitHub | — |
+| Đào Phương Vinh (`daophuongvinh4-design`) | Lời mời cộng tác đang chờ; chờ commit/PR | Chưa ghi nhận hoạt động GitHub | — |
+
