@@ -1,0 +1,128 @@
+{
+  "audit": {
+    "rows_source": 10000,
+    "rows_analysis": 10000,
+    "columns": [
+      "Make",
+      "Model",
+      "Year",
+      "Price",
+      "Mileage",
+      "Body Type",
+      "Cylinders",
+      "Transmission",
+      "Fuel Type",
+      "Color",
+      "Location",
+      "Description"
+    ],
+    "duplicate_rows_removed": 0,
+    "missing_after_normalization": {
+      "Make": 0,
+      "Model": 0,
+      "Year": 0,
+      "Price": 0,
+      "Mileage": 0,
+      "Body Type": 0,
+      "Cylinders": 155,
+      "Transmission": 0,
+      "Fuel Type": 0,
+      "Color": 0,
+      "Location": 0,
+      "Description": 0
+    },
+    "cylinders_missing_normalized": 155,
+    "location_values_trimmed": 9869
+  },
+  "price_summary_AED": {
+    "mean": 245234.5079,
+    "median": 102766.0,
+    "q1": 50352.5,
+    "q3": 231248.0,
+    "min": 7183.0,
+    "max": 14686975.0
+  },
+  "year_summary": {
+    "min": 2005,
+    "median": 2014.0,
+    "max": 2024
+  },
+  "mileage_summary_km": {
+    "min": 10006,
+    "median": 154370.5,
+    "max": 299996
+  },
+  "correlations": {
+    "pearson": {
+      "Year": {
+        "Year": 1.0,
+        "Mileage": -0.0171,
+        "Price": 0.0002
+      },
+      "Mileage": {
+        "Year": -0.0171,
+        "Mileage": 1.0,
+        "Price": 0.0107
+      },
+      "Price": {
+        "Year": 0.0002,
+        "Mileage": 0.0107,
+        "Price": 1.0
+      }
+    },
+    "spearman": {
+      "Year": {
+        "Year": 1.0,
+        "Mileage": -0.017,
+        "Price": -0.0001
+      },
+      "Mileage": {
+        "Year": -0.017,
+        "Mileage": 1.0,
+        "Price": 0.0072
+      },
+      "Price": {
+        "Year": -0.0001,
+        "Mileage": 0.0072,
+        "Price": 1.0
+      }
+    }
+  },
+  "mann_whitney_SUV_vs_Sedan": {
+    "U": 4822934.5,
+    "z_approx": -18.01692143915931,
+    "p_value_approx": 1.4351044328544343e-72,
+    "n_group1": 4607,
+    "n_group2": 2790,
+    "group1": "SUV",
+    "group2": "Sedan",
+    "median_SUV_AED": 118414.0,
+    "median_Sedan_AED": 70287.5
+  },
+  "model": {
+    "n_train": 8000,
+    "n_test": 2000,
+    "predictors": [
+      "Year",
+      "Mileage"
+    ],
+    "target_transform": "natural log of Price",
+    "coefficients_log_price": {
+      "intercept": 11.66091534123378,
+      "Year_standardized": 0.004263688122460233,
+      "Mileage_standardized": 0.008780865098024037
+    },
+    "baseline_train_median": {
+      "MAE_AED": 193477.773,
+      "RMSE_AED": 488598.70034067205,
+      "R2_AED": -0.09603896306465654
+    },
+    "linear_regression": {
+      "MAE_AED": 193895.59373891552,
+      "RMSE_AED": 484787.6861075128,
+      "R2_AED": -0.0790076858841049
+    },
+    "note": "Metrics are on AED scale after exponentiating predicted log price; a simple baseline, not a valuation product."
+  },
+  "charts": "SVG fallback created; install matplotlib and seaborn for notebook-native plotting (No module named 'matplotlib')"
+}

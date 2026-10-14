@@ -1,0 +1,48 @@
+"""Build the annotated Jupyter notebook and save reproducible text outputs."""
+from __future__ import annotations
+
+import contextlib
+import io
+import json
+import os
+from pathlib import Path
+
+ROOT = Path(__file__).resolve().parents[2]
+NOTEBOOK = ROOT / "notebooks" / "eda" / "02_data_analyze.ipynb"
+
+
+def markdown(text: str) -> dict:
+    return {"cell_type": "markdown", "metadata": {}, "source": text.splitlines(keepends=True)}
+
+
+def code(text: str) -> dict:
+    return {"cell_type": "code", "execution_count": None, "metadata": {}, "outputs": [], "source": text.splitlines(keepends=True)}
+
+
+cells = [
+    markdown("""# Giá niêm yết xe đã qua sử dụng tại UAE\n\n**Môn:** ADY201m — Data Science with Python & SQL  \n**Loại bài:** project phân tích dữ liệu khám phá và baseline hồi quy  \n**Nhóm:** điền tên và mã sinh viên trước khi nộp\n\n> Đề/rubric chính thức không được cung cấp trong yêu cầu hiện tại. Notebook này triển khai project học thuật theo các chủ đề môn học đã nêu; cần đối chiếu với giảng viên trước khi coi là đúng định dạng nộp cuối cùng.\n\n**Câu hỏi chính:** Các thuộc tính xe và địa điểm liên hệ như thế nào với giá niêm yết xe cũ trong bộ dữ liệu UAE?\n\n**Nguồn:** [Kaggle — UAE Used Car Prices & Features (10K+ Listings)](https://www.kaggle.com/datasets/alikalwar/uae-used-car-prices-and-features-10k-listings), Ali Kalwar, license CC BY-SA 4.0. `Price` được xem là giá trong tin đăng, không khẳng định là giá giao dịch.\n"""),
+    markdown("""## 1. Xác định bài toán và research questions\n\n- **RQ1:** Giá niêm yết phân bố thế nào và thay đổi ra sao theo năm, số km, hãng, loại thân xe, địa điểm?\n- **RQ2:** Trung vị giá của SUV và Sedan có khác nhau trong mẫu không? Dùng Mann–Whitney U hai phía vì giá lệch phải và có ngoại lệ.\n- **RQ3:** Mô hình tuyến tính baseline dùng `Year` và `Mileage` dự đoán giá trên hold-out ra sao so với baseline dự đoán trung vị?\n\nĐây là dữ liệu quan sát; kiểm định và hồi quy chỉ mô tả liên hệ, không chứng minh nguyên nhân.\n"""),
+    markdown("""## 2. Nạp và làm sạch dữ liệu\n\nProject dùng pandas/numpy cho phân tích, SQLite cho SQL. Mã nguồn phân tích nằm trong `run_analysis.py`; CSV gốc không bị thay đổi. Bước làm sạch chuẩn hóa khoảng trắng, chuyển trường số và coi ô trống, `None`, `Unknown` là thiếu ở `Cylinders`.\n"""),
+    code("""from pathlib import Path\nimport sys, json, sqlite3\nimport pandas as pd\nimport numpy as np\n\nPROJECT_ROOT = next((p for p in [Path.cwd(), *Path.cwd().parents] if (p / "data" / "raw").exists()), Path.cwd())\nANALYSIS_DIR = PROJECT_ROOT / "scripts" / "analysis"\nsys.path.insert(0, str(ANALYSIS_DIR))\nfrom run_analysis import load_and_clean, create_database, model_evaluation, mann_whitney_approx, run\n\nresults = run()  # Nạp CSV, làm sạch, dựng SQLite, chạy thống kê và lưu kết quả tái lập\ndf, audit = load_and_clean()\nprint("Data shape:", df.shape)\nprint("Columns:", list(df.columns))\nprint("Cleaning audit:", json.dumps(audit, ensure_ascii=False, indent=2))\nprint(df.head(5).to_string(index=False))\n"""),
+    markdown("""### Từ điển dữ liệu\n\n| Cột | Ý nghĩa | Kiểu phân tích |\n|---|---|---|\n| `Make` | Hãng xe | Phân loại |\n| `Model` | Mẫu xe | Phân loại |\n| `Year` | Năm sản xuất | Số nguyên |\n| `Price` | Giá đăng bán, AED | Số thực; biến kết quả |\n| `Mileage` | Số km đã đi | Số nguyên |\n| `Body Type` | Dạng thân xe | Phân loại |\n| `Cylinders` | Số xi-lanh; có giá trị chưa biết | Số nguyên/thiếu |\n| `Transmission` | Loại hộp số | Phân loại |\n| `Fuel Type` | Loại nhiên liệu | Phân loại |\n| `Color` | Màu xe | Phân loại |\n| `Location` | Địa điểm UAE | Phân loại; trim khoảng trắng |\n| `Description` | Nội dung tự do, gồm tiện nghi/tình trạng | Văn bản |\n\n**Kết quả profile nguồn này:** 10.000 dòng, 12 cột, không có dòng trùng hoàn toàn; sau chuẩn hóa có 155 `Cylinders` thiếu/không xác định; 9.869 giá trị `Location` có khoảng trắng đầu/cuối.\n"""),
+    markdown("""## 3. SQL: truy vấn qua SQLite\n\nDatabase chuẩn hóa các bảng `make`, `body_type`, `emirate`, `car_listing`, dùng khóa ngoại và chỉ mục. Các truy vấn dưới đây thể hiện `JOIN`, `GROUP BY`, `HAVING`, `ORDER BY`.\n"""),
+    code("""db_path = PROJECT_ROOT / "database" / "uae_used_cars.db"\nconn = sqlite3.connect(db_path)\nq_make = \"\"\"SELECT m.make_name AS make, COUNT(*) AS listings, ROUND(AVG(c.price_aed), 0) AS mean_price_aed\nFROM car_listing c JOIN make m ON c.make_id=m.make_id\nGROUP BY m.make_name HAVING COUNT(*) >= 50 ORDER BY mean_price_aed DESC LIMIT 10\"\"\"\nq_body = \"\"\"SELECT b.body_type_name AS body_type, COUNT(*) AS listings, ROUND(AVG(c.price_aed), 0) AS mean_price_aed\nFROM car_listing c JOIN body_type b ON c.body_type_id=b.body_type_id\nGROUP BY b.body_type_name ORDER BY listings DESC\"\"\"\nprint("Top makes by average asking price (minimum 50 listings):")\nprint(pd.read_sql_query(q_make, conn).to_string(index=False))\nprint("\\nPrice summary by body type:")\nprint(pd.read_sql_query(q_body, conn).to_string(index=False))\nconn.close()\n"""),
+    markdown("""SQL `AVG` is sensitive to very expensive listings. For the main descriptive comparisons, also inspect medians and sample sizes. Do not rank a make with very few listings as if its average were stable.\n"""),
+    code("""# Descriptive statistics and medians by selected groups\nprint("Price (AED):")\nprint(df["Price"].describe(percentiles=[.25, .5, .75]).round(1).to_string())\nprint("\\nMedian asking price by body type (with sample size):")\nprint(df.groupby("Body Type")["Price"].agg(["count", "median", "mean"]).sort_values("median", ascending=False).round(0).to_string())\nprint("\\nMedian asking price by year:")\nprint(df.groupby("Year")["Price"].agg(["count", "median"]).round(0).to_string())\nprint("\\nPearson correlations (numerical fields):")\nprint(df[["Year", "Mileage", "Price"]].corr(method="pearson").round(3).to_string())\nprint("\\nSpearman rank correlations:")\nprint(df[["Year", "Mileage", "Price"]].corr(method="spearman").round(3).to_string())\n"""),
+    markdown("""## 4. Kiểm định giả thuyết: SUV và Sedan\n\n- **H₀:** phân phối giá niêm yết của SUV và Sedan giống nhau.\n- **H₁:** hai phân phối khác nhau.\n- Chọn mức ý nghĩa 0,05. Mann–Whitney U dùng xấp xỉ chuẩn có hiệu chỉnh ties, hai phía; p-value rất nhỏ vẫn không đo mức chênh lệch thực tế và không loại trừ yếu tố gây nhiễu như hãng/năm.\n"""),
+    code("""suv = df.loc[df["Body Type"] == "SUV", "Price"].to_numpy(dtype=float)\nsedan = df.loc[df["Body Type"] == "Sedan", "Price"].to_numpy(dtype=float)\ntest = mann_whitney_approx(suv, sedan)\nprint("SUV n, median AED:", len(suv), float(np.median(suv)))\nprint("Sedan n, median AED:", len(sedan), float(np.median(sedan)))\nprint("Mann-Whitney U (normal approximation):", json.dumps(test, indent=2))\nprint("Decision at alpha=0.05:", "reject H0" if test["p_value_approx"] < .05 else "fail to reject H0")\n"""),
+    markdown("""## 5. Baseline hồi quy và đánh giá\n\nDùng 80% train / 20% test, chia ngẫu nhiên có seed cố định. Dự đoán `log(Price)` bằng hồi quy bình phương tối thiểu với `Year` và `Mileage`; sau đó đổi dự đoán về AED. So sánh với mô hình mốc luôn dự đoán trung vị giá train. Vì phân phối giá có đuôi phải rất dài, đọc đồng thời MAE, RMSE và R² trên AED.\n"""),
+    code("""model_result = model_evaluation(df)\nprint(json.dumps(model_result, ensure_ascii=False, indent=2))\n"""),
+    markdown("""## 6. Biểu đồ và kiểm tra ngoại lệ\n\nKhi `matplotlib` và `seaborn` có sẵn, `run_analysis.py` lưu hai PNG. Nếu môi trường hiện tại thiếu chúng, script tạo SVG thay thế để vẫn xem được mẫu quan hệ và trung vị theo năm. Giá tối đa lớn hơn rất nhiều trung vị; không xóa ngoại lệ nếu chưa kiểm tra bản ghi và lý do nghiệp vụ.\n\n![Giá theo số km, trục giá log](../../docs/figures/price_vs_mileage.svg)\n\n![Trung vị giá theo năm](../../docs/figures/median_price_by_year.svg)\n\nĐể có biểu đồ notebook-native với seaborn, cài `requirements.txt` rồi chạy lại notebook.\n"""),
+    code("""print("Price quantiles:")\nprint(df["Price"].quantile([0, .25, .5, .75, .9, .95, .99, 1]).to_string())\nprint("\\nChart files:")\nfor p in sorted((PROJECT_ROOT / "docs" / "figures").glob("*.svg")) + sorted((PROJECT_ROOT / "docs" / "figures").glob("*.png")):\n    print(p.relative_to(PROJECT_ROOT))\n"""),
+    markdown("""## 7. Kết luận và giới hạn\n\nTrong mẫu này, giá trung vị là khoảng 102.766 AED; SUV có trung vị 118.414 AED, Sedan 70.287,5 AED. Kiểm định phân phối cho p-value xấp xỉ 1,44×10⁻⁷², phù hợp với sự khác biệt trong mẫu, nhưng không chứng minh loại thân xe tự nó làm thay đổi giá.\n\nTương quan tuyến tính thô giữa giá và năm/km gần 0; điều này cho thấy hai biến đơn lẻ chưa giải thích tốt giá của nhiều mẫu xe khác nhau. Baseline hồi quy Year+Mileage có MAE xấp xỉ 193.896 AED và R² âm trên tập test (−0,079), nên trong bộ dữ liệu này nó chưa dự đoán tốt hơn nhiều so với biến thiên quanh trung bình. Model rất đơn giản; chưa mã hóa hãng/mẫu, thân xe, địa điểm, nhiên liệu, tình trạng, cũng chưa xử lý outlier hoặc đánh giá chéo.\n\n**Giới hạn:** tin đăng không phải giao dịch xác nhận; nguồn/mẫu có thể thiên lệch; `Description` cần trích xuất có kiểm soát; `Cylinders` thiếu 155 giá trị; nhóm hiếm có kết quả không ổn định; khoảng giá cực rộng cần xác minh. Không đưa ra khuyến nghị định giá xe cá nhân từ baseline này.\n"""),
+]
+
+notebook = {
+    "cells": cells,
+    "metadata": {"kernelspec": {"display_name": "Python 3", "language": "python", "name": "python3"}, "language_info": {"name": "python", "version": "3.12"}},
+    "nbformat": 4,
+    "nbformat_minor": 5,
+}
+NOTEBOOK.write_text(json.dumps(notebook, ensure_ascii=False, indent=2), encoding="utf-8")
+print(f"Wrote {NOTEBOOK} with {len(cells)} cells")

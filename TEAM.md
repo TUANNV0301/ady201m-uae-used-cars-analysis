@@ -1,0 +1,23 @@
+# Thành viên, vai trò và bằng chứng đóng góp
+
+> Roster do nhóm cung cấp. Phân công dưới đây là đề xuất theo các phần việc dự án; nhóm có thể điều chỉnh.
+
+## Roster và phân công
+
+| Thành viên | Mã sinh viên | GitHub username | Vai trò chính | Phần việc được giao |
+| --- | --- | --- | --- | --- |
+| Nguyễn Văn Tuấn | HE204537 | `TUANNV0301` | Dữ liệu và làm sạch | Theo dõi nguồn dữ liệu, kiểm tra chất lượng, pipeline làm sạch và data dictionary |
+| Lê Huy Cường | HE204406 | `CuongLH02` | SQL và cơ sở dữ liệu | Schema SQLite, truy vấn SQL, kiểm tra tính nhất quán giữa SQL và kết quả phân tích |
+| Đào Phương Vinh | HE204851 | `daophuongvinh4` | EDA, mô hình và báo cáo | Notebook/biểu đồ, diễn giải baseline, tổng hợp báo cáo và slide |
+
+Nhóm có thể gộp hoặc chia vai trò theo số lượng thành viên thực tế. Mỗi người dùng tài khoản GitHub riêng, tự tạo nhánh/commit hoặc pull request cho phần mình làm. Không gán commit của một người cho thành viên khác.
+
+## Nhật ký bằng chứng GitHub
+
+Điền sau khi có hoạt động thật trên repository. Dùng liên kết commit hoặc pull request; có thể bổ sung ảnh chụp màn hình trang Contributors nếu bài nộp yêu cầu.
+
+| Thành viên / username | Liên kết commit hoặc PR | Phần việc được đóng góp | Ngày |
+| --- | --- | --- | --- |
+| Nguyễn Văn Tuấn (`TUANNV0301`) | Chờ commit/PR | Chưa ghi nhận hoạt động GitHub | — |
+| Lê Huy Cường (`CuongLH02`) | Chờ commit/PR | Chưa ghi nhận hoạt động GitHub | — |
+| Đào Phương Vinh (`daophuongvinh4`) | Chờ commit/PR | Chưa ghi nhận hoạt động GitHub | — |

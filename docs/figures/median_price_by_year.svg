@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="520" viewBox="0 0 900 520">
+<rect width="100%" height="100%" fill="white"/>
+<text x="450" y="32" text-anchor="middle" font-family="Arial" font-size="21">Trung vị giá niêm yết theo năm xe</text>
+<line x1="85" y1="435" x2="865" y2="435" stroke="#333"/>
+<rect x="92.4" y="120.6" width="24.2" height="314.4" fill="#32A287"/>
+<text x="104.5" y="457" text-anchor="middle" font-family="Arial" font-size="11">2005</text>
+<rect x="131.4" y="91.5" width="24.2" height="343.5" fill="#32A287"/>
+<text x="143.5" y="457" text-anchor="middle" font-family="Arial" font-size="11">2006</text>
+<rect x="170.4" y="138.0" width="24.2" height="297.0" fill="#32A287"/>
+<text x="182.5" y="457" text-anchor="middle" font-family="Arial" font-size="11">2007</text>
+<rect x="209.4" y="96.9" width="24.2" height="338.1" fill="#32A287"/>
+<text x="221.5" y="457" text-anchor="middle" font-family="Arial" font-size="11">2008</text>
+<rect x="248.4" y="136.3" width="24.2" height="298.7" fill="#32A287"/>
+<text x="260.5" y="457" text-anchor="middle" font-family="Arial" font-size="11">2009</text>
+<rect x="287.4" y="81.6" width="24.2" height="353.4" fill="#32A287"/>
+<text x="299.5" y="457" text-anchor="middle" font-family="Arial" font-size="11">2010</text>
+<rect x="326.4" y="114.8" width="24.2" height="320.2" fill="#32A287"/>
+<text x="338.5" y="457" text-anchor="middle" font-family="Arial" font-size="11">2011</text>
+<rect x="365.4" y="65.5" width="24.2" height="369.5" fill="#32A287"/>
+<text x="377.5" y="457" text-anchor="middle" font-family="Arial" font-size="11">2012</text>
+<rect x="404.4" y="65.0" width="24.2" height="370.0" fill="#32A287"/>
+<text x="416.5" y="457" text-anchor="middle" font-family="Arial" font-size="11">2013</text>
+<rect x="443.4" y="87.5" width="24.2" height="347.5" fill="#32A287"/>
+<text x="455.5" y="457" text-anchor="middle" font-family="Arial" font-size="11">2014</text>
+<rect x="482.4" y="89.6" width="24.2" height="345.4" fill="#32A287"/>
+<text x="494.5" y="457" text-anchor="middle" font-family="Arial" font-size="11">2015</text>
+<rect x="521.4" y="122.6" width="24.2" height="312.4" fill="#32A287"/>
+<text x="533.5" y="457" text-anchor="middle" font-family="Arial" font-size="11">2016</text>
+<rect x="560.4" y="85.4" width="24.2" height="349.6" fill="#32A287"/>
+<text x="572.5" y="457" text-anchor="middle" font-family="Arial" font-size="11">2017</text>
+<rect x="599.4" y="103.8" width="24.2" height="331.2" fill="#32A287"/>
+<text x="611.5" y="457" text-anchor="middle" font-family="Arial" font-size="11">2018</text>
+<rect x="638.4" y="84.0" width="24.2" height="351.0" fill="#32A287"/>
+<text x="650.5" y="457" text-anchor="middle" font-family="Arial" font-size="11">2019</text>
+<rect x="677.4" y="89.8" width="24.2" height="345.2" fill="#32A287"/>
+<text x="689.5" y="457" text-anchor="middle" font-family="Arial" font-size="11">2020</text>
+<rect x="716.4" y="104.0" width="24.2" height="331.0" fill="#32A287"/>
+<text x="728.5" y="457" text-anchor="middle" font-family="Arial" font-size="11">2021</text>
+<rect x="755.4" y="118.7" width="24.2" height="316.3" fill="#32A287"/>
+<text x="767.5" y="457" text-anchor="middle" font-family="Arial" font-size="11">2022</text>
+<rect x="794.4" y="106.3" width="24.2" height="328.7" fill="#32A287"/>
+<text x="806.5" y="457" text-anchor="middle" font-family="Arial" font-size="11">2023</text>
+<rect x="833.4" y="126.2" width="24.2" height="308.8" fill="#32A287"/>
+<text x="845.5" y="457" text-anchor="middle" font-family="Arial" font-size="11">2024</text>
+<text x="75" y="70" text-anchor="end" font-family="Arial" font-size="12">113,819</text>
+<text x="475.0" y="498" text-anchor="middle" font-family="Arial" font-size="15">Năm sản xuất</text>
+<text x="22" y="250.0" text-anchor="middle" transform="rotate(-90 22 250.0)" font-family="Arial" font-size="15">Trung vị AED</text>
+</svg>

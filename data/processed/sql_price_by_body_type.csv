@@ -1,0 +1,14 @@
+body_type,listings,mean_price_aed
+SUV,4607,259642.23
+Sedan,2790,156058.08
+Coupe,837,369481.44
+Pick Up Truck,432,148241.0
+Hatchback,334,78666.79
+Sports Car,270,706251.14
+Van,143,99185.59
+Hard Top Convertible,139,660750.19
+Crossover,136,116445.86
+Soft Top Convertible,120,569321.74
+Other,114,164797.82
+Wagon,44,308644.93
+Utility Truck,34,234184.38
